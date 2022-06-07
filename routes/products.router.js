@@ -11,6 +11,12 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/:category', (req, res) => {
+    const categoryName = req.params.category;
+    productService.productFilterByCategory(categoryName, (products) => {
+        res.status(200).json(products);
+    });
+});
 
 module.exports = router;
 
