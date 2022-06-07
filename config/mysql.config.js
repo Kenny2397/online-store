@@ -13,4 +13,4 @@ const pool = mysql.createPool({
 //     console.log("Server connected to database");
 // });
 
-exports.default = pool;
+module.exports = pool;
