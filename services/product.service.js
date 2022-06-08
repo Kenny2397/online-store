@@ -8,7 +8,7 @@ class ProductService {
     }
 
     getAll(callback) {
-        let query = 'SELECT * FROM product';
+        let query = 'SELECT * FROM product ORDER BY name ASC';
 
         pool.getConnection((err, connection) => {
             if(err) throw err;
@@ -25,7 +25,7 @@ class ProductService {
     }
 
     search(search, callback) {
-        let query = 'SELECT * FROM product WHERE name LIKE ?';
+        let query = 'SELECT * FROM product WHERE name LIKE ? ORDER BY name ASC';
 
         pool.getConnection((err, connection) => {
             if(err) throw err;
