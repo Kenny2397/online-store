@@ -7,16 +7,14 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
     productService.getAll((products) => {
-        res.status(200).json(products);
+        res.status(200).json({
+            message: 'Products retrieved successfully',
+            size: products.length,
+            data:products
+        });
     });
 });
 
-router.get('/:category', (req, res) => {
-    const categoryName = req.params.category;
-    productService.productFilterByCategory(categoryName, (products) => {
-        res.status(200).json(products);
-    });
-});
 
 module.exports = router;
 
