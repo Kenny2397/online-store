@@ -7,7 +7,7 @@ class CategoryService {
         
     }
 
-    productFilterByCategory ( categoryName, callback ) {
+    async productFilterByCategory ( categoryName, callback ) {
         
         let query = 'Select product.name As name, category.name As category, product.url_image, product.price, product.discount From product Inner Join category On product.category = category.id Where category.name = ? Order By name ASC';
 

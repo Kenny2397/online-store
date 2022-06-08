@@ -6,7 +6,7 @@ const productService = new ProductService();
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    productService.getAll((products) => {
+    productService.getAll( (products) => {
         res.status(200).json({
             message: 'Products retrieved successfully',
             size: products.length,
