@@ -15,6 +15,17 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/search/:search', (req, res) => {
+    const search = req.params.search;
+    productService.search(search, (products) => {
+        res.status(200).json({
+            message: 'Products retrieved successfully',
+            size: products.length,
+            data:products
+        });
+    });
+});
+
 
 module.exports = router;
 

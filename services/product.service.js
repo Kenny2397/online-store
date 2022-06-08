@@ -24,6 +24,23 @@ class ProductService {
         });
     }
 
+    search(search, callback) {
+        let query = 'SELECT * FROM product WHERE name LIKE ?';
+
+        pool.getConnection((err, connection) => {
+            if(err) throw err;
+
+            connection.query(query, ['%' + search + '%'], (err, results) => {
+                if(err) throw err;
+
+                callback(results);
+                
+                connection.release();
+                // console.log(results);
+            });
+        });
+    }
+
    
 
 }
