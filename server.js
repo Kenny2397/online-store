@@ -5,23 +5,31 @@ const routerApi = require('./routes');
 
 const app = express();
 
-// middleware json, urlencoded
-app.use(express.json(), express.urlencoded({ extended: true }) );
+//cors middleware
+const whiteList = ['http://127.0.0.1:5500'];
+app.use(
+    cors({
+        origin: function(origin, callback) {
+            if (whiteList.indexOf(origin) !== -1 || !origin) {
+                callback(null, true);
+            } else {
+                callback(new Error('Not allowed by CORS'));
+            }
+        },
+        methods: ["GET"]
+}));
+
+// middleware urlencoded para solicitudes simples de forms por default
+// app(express.urlencoded({ extended: true }));
+
+// middleware json
+app.use(express.json());
 
 
 routerApi(app);
 
-//cors middleware
-app.use (
-    cors( {
-        //url frontend
-        origin: "http://localhost:3000",
-        // credentials
-        // credentials: true
-    })
-)
 
-const port = 8000;
+const port = process.env.PORT || 8000;
 
 app.listen(port, () => {
     console.log('Server is running at port ' + port);
