@@ -9,7 +9,7 @@ const routerApi = require('./routes');
 const app = express();
 
 //cors middleware
-const whiteList = ['http://127.0.0.1:5500'];
+const whiteList = ['http://127.0.0.1:5500','https://bsale-test-challenge.netlify.app'];
 app.use(
     cors({
         origin: function(origin, callback) {
