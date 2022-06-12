@@ -11,7 +11,7 @@ view:
 
 api:
 
-https://bsale-challenge-online-store.herokuapp.com
+https://bsale-challenge-online-store.herokuapp.com/api/v1/products
 
 
 # ENDPOINTS
@@ -40,3 +40,10 @@ GET LISTA DE PRODUCTOS QUE COINCIDAN CON LA BUSQUEDA
 GET api/v1/products/search/:search  RETURN ALL PRODUCTS SEARCH MATCH  IN JSON FORMAT ORDER BY NAME ASC 
 
 ![ALL PRODUCTS](./client/img/SEARCH-PRODUCTS.png)
+
+
+Author: Kenny Julián Luque Ticona
+Email: <a href="mailto:kenny.luque.t@uni.pe" target="_blank">kenny.luque.t@uni.pe</a>
+Github: <a href="https://github.com/Kenny2397"  target="_blank">Kenny2397</a>
+Portfolio: <a href="https://kenny2397.github.io" target="_blank">Kenny2397</a>
+linkedin: <a href="https://linkedin.com/in/kennyluquet" target="_blank">Kennyluquet</a>
