@@ -9,7 +9,7 @@ if(!categoryActive){
 
 function getData() {
     console.log('click');
-    fetch('https://challenge-bsale.herokuapp.com/api/v1/products', {
+    fetch('https://bsale-challenge-online-store.herokuapp.com/api/v1/products', {
         method: 'GET',
     })
     .then(response => response.json())
@@ -49,7 +49,7 @@ function getCategory(category) {
       }
   
   
-      fetch('https://challenge-bsale.herokuapp.com/api/v1/categories/'+category, {
+      fetch('https://bsale-challenge-online-store.herokuapp.com/api/v1/categories/'+category, {
           method: 'GET',
       })
       .then(response => response.json())
@@ -106,7 +106,7 @@ const formSearch = document.querySelector('#form-search').addEventListener('subm
         document.getElementById("lista").removeChild(lista.firstChild);
     }
   
-    fetch('https://challenge-bsale.herokuapp.com/api/v1/products/search/'+search.search, {
+    fetch('https://bsale-challenge-online-store.herokuapp.com/api/v1/products/search/'+search.search, {
         method: 'GET',
     })
     .then(response => response.json())
