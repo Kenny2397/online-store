@@ -1,6 +1,9 @@
 const express = require('express');
 const cors = require("cors");
 
+const dotenv = require('dotenv');
+dotenv.config();
+
 const routerApi = require('./routes');
 
 const app = express();
@@ -19,7 +22,7 @@ app.use(
         methods: ["GET"]
 }));
 
-// middleware urlencoded para solicitudes simples de forms por default
+// middleware urlencoded request forms default
 // app(express.urlencoded({ extended: true }));
 
 // middleware json
